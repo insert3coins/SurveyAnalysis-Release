@@ -1,4 +1,4 @@
-SURVEY ANALYSIS // ELITE DANGEROUS COMPANION
+SURVEY ANALYSIS // ELITE DANGEROUS COMPANION // v1.6.1
 ============================================
 
 DESCRIPTION
@@ -6,6 +6,9 @@ DESCRIPTION
 Survey Analysis is a real-time exploration companion for Elite Dangerous.
 It reads your journal files as you play to provide:
 - A tactical HUD overlay with navigation and scan progress.
+- A Cargo Manifest overlay to track inventory.
+- A Route Planner for custom navigation.
+- Automatic Screenshot conversion (BMP -> PNG).
 - Automatic data upload to EDSM.
 - Live telemetry updates to Discord.
 
@@ -35,10 +38,16 @@ On the first run, click the [ CONFIGURATION ] button in the top right.
    - Create a new Webhook, copy the URL.
    - Paste the URL into the "Discord Webhook" field in the app.
 
+4. Screenshots (Optional):
+   - Enable the converter in Settings.
+   - Point it to your Elite Dangerous screenshot folder.
+   - It will auto-convert BMPs to PNGs and rename them with the system name.
+
 USAGE
 -----
 - Launch the app before or during your game session.
-- The "Tactical Overlay" can be dragged anywhere on screen.
+- The "Tactical Overlay" and "Cargo Overlay" can be dragged anywhere on screen.
+- Use the [ ROUTE PLANNER ] to plot custom waypoints.
 - Data is automatically uploaded to EDSM and Discord as you play.
 - The window position is saved automatically upon exit.
 

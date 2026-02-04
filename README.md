@@ -21,7 +21,7 @@ A real-time exploration and navigation companion for Elite Dangerous. This tool 
     *   Live system traffic data from EDSM (24h, weekly, total).
     *   Organic (biology) scan count.
 
-    ![Tactical HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/hud.png "Tactical HUD")
+    ![Tactical HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/NavHud.png "Tactical HUD")
 
 *   **Cargo Manifest Overlay:** A separate overlay to track your ship's inventory in real-time.
 
@@ -32,7 +32,7 @@ A real-time exploration and navigation companion for Elite Dangerous. This tool 
     *   Manage waypoints and track progress.
     *   Auto-copy next waypoint to clipboard.
 
-    ![Route Planner](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/route.png "Route Planner")
+    ![Route Planner](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/RoutePlanner.png "Route Planner")
 
 *   **Screenshot Studio:**
     *   Automatically converts high-res BMP screenshots to PNG.

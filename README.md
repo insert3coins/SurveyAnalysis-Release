@@ -2,7 +2,7 @@
 
 A real-time exploration and navigation companion for Elite Dangerous. This tool reads your journal files as you play, providing a tactical overlay, a detailed dashboard, and live integration with EDSM and Discord to track your journey.
 
-![Dashboard Screenshot](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/dashboard.png "Dashboard Screenshot")
+![Dashboard Screenshot](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/DashBoard.PNG "Dashboard Screenshot")
 
 ## Features
 
@@ -21,20 +21,20 @@ A real-time exploration and navigation companion for Elite Dangerous. This tool 
     *   Live system traffic data from EDSM (24h, weekly, total).
     *   Organic (biology) scan count.
 
-    ![Tactical HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/NavHud.png "Tactical HUD")
+    ![Tactical HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/NavHud.PNG "Tactical HUD")
 
 *   **Cargo Manifest Overlay:** A separate overlay to track your ship's inventory in real-time.
 
-    ![Cargo HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/cargo.png "Cargo HUD")
+    <!-- Screenshot pending: cargo overlay -->
 
 *   **Route Planner:**
     *   Built-in tool to plot custom routes.
     *   Manage waypoints and track progress.
     *   Auto-copy next waypoint to clipboard.
 
-    ![Route Planner](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/RoutePlanner.png "Route Planner")
+    ![Route Planner](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/RoutePlanner.PNG "Route Planner")
 
-*   **Screenshot Studio:**
+*   **Screenshot Converter:**
     *   Automatically converts high-res BMP screenshots to PNG.
     *   Renames files with **System Name** and **Timestamp**.
     *   Auto-deletes original BMPs to save space.
@@ -50,8 +50,6 @@ A real-time exploration and navigation companion for Elite Dangerous. This tool 
     *   Automatically creates a `config.json` file on first launch.
     *   In-app settings panel to configure all major features.
     *   Saves window positions for a consistent layout.
-
-    !Settings
 
 ---
 

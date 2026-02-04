@@ -1,54 +1,106 @@
-SURVEY ANALYSIS // ELITE DANGEROUS COMPANION
-============================================
+# Elite Dangerous - Void Compass
 
-DESCRIPTION
------------
-Survey Analysis is a real-time exploration companion for Elite Dangerous.
-It reads your journal files as you play to provide:
-- A tactical HUD overlay with navigation and scan progress.
-- A Cargo Manifest overlay to track inventory.
-- A Route Planner for custom navigation.
-- Automatic Screenshot conversion (BMP -> PNG).
-- Automatic data upload to EDSM.
-- Live telemetry updates to Discord.
+A real-time exploration and navigation companion for Elite Dangerous. This tool reads your journal files as you play, providing a tactical overlay, a detailed dashboard, and live integration with EDSM and Discord to track your journey.
 
-INSTALLATION
-------------
-1. Place 'SurveyAnalysis.exe' anywhere you like.
-2. Run the application.
-3. A 'config.json' file will be created automatically in the same folder.
+![Dashboard Screenshot](https://i.imgur.com/placeholder.png "Dashboard Screenshot")
 
-CONFIGURATION
--------------
-On the first run, click the [ CONFIGURATION ] button in the top right.
+## Features
 
-1. Journal Path:
-   The app usually auto-detects your Elite Dangerous journal folder.
-   If not, point it to: 
-   C:\Users\[YourName]\Saved Games\Frontier Developments\Elite Dangerous
+*   **Real-time Event Logging:** Reads the Elite Dangerous journal files live to track your actions.
+*   **Detailed Dashboard:** A desktop application that provides a central view of:
+    *   Current system and coordinates.
+    *   System scan progress (bodies scanned vs. total).
+    *   Exobiology scan count.
+    *   **Next Waypoint** navigation panel.
+    *   EDSM upload status and queue size.
+    *   A detailed console log of all major events.
+*   **Tactical HUD Overlay:** A movable, always-on-top window that displays critical information over your game:
+    *   Current system and route progress (e.g., "Jump 5 of 20").
+    *   Navigation target and distance in light-years.
+    *   A visual progress bar for system scans.
+    *   Live system traffic data from EDSM (24h, weekly, total).
+    *   Organic (biology) scan count.
+*   **Cargo Manifest Overlay:** A separate overlay to track your ship's inventory in real-time.
+*   **Route Planner:**
+    *   Built-in tool to plot custom routes.
+    *   Manage waypoints and track progress.
+    *   Auto-copy next waypoint to clipboard.
+*   **Screenshot Studio:**
+    *   Automatically converts high-res BMP screenshots to PNG.
+    *   Renames files with **System Name** and **Timestamp**.
+    *   Auto-deletes original BMPs to save space.
+*   **Live Discord Integration:**
+    *   Posts a single, persistent message to a specified webhook that updates in real-time.
+    *   Dynamic titles for events like `🚀 JUMP COMPLETE`, `🛰️ SCAN: [Body]`, and `🌱 BIO-LOG: [Genus]`.
+    *   Automatically highlights valuable discoveries (Earth-like, Water, Ammonia worlds, and Terraformables) with special emojis and colors.
+    *   Resets with a new message upon jumping to a new system.
+*   **EDSM Integration:**
+    *   Automatically uploads your travel history and scan data (`FSDJump`, `FSSDiscoveryScan`, `Scan`, `ScanOrganic`) to the EDSM database.
+    *   Fetches system traffic data to display on the HUD.
+*   **Easy Configuration:**
+    *   Automatically creates a `config.json` file on first launch.
+    *   In-app settings panel to configure all major features.
+    *   Saves window positions for a consistent layout.
 
-2. EDSM Integration (Optional but Recommended):
-   - Go to https://www.edsm.net/ and log in.
-   - Click your profile picture -> "My EDSM Profile".
-   - Look for the "Account" tab/section to find your API Key.
-   - Enter your Commander Name and API Key in the settings.
+---
 
-3. Discord Integration (Optional):
-   - In your Discord server, go to Server Settings -> Integrations -> Webhooks.
-   - Create a new Webhook, copy the URL.
-   - Paste the URL into the "Discord Webhook" field in the app.
+## Installation & Setup
 
-4. Screenshots (Optional):
-   - Enable the converter in Settings.
-   - Point it to your Elite Dangerous screenshot folder.
-   - It will auto-convert BMPs to PNGs and rename them with the system name.
+1.  **Prerequisites:**
+    *   Python 3.x must be installed.
+    *   You will need the `requests` and `Pillow` libraries. You can install them by running:
+        ```
+        pip install requests Pillow
+        ```
 
-USAGE
------
-- Launch the app before or during your game session.
-- The "Tactical Overlay" and "Cargo Overlay" can be dragged anywhere on screen.
-- Use the [ ROUTE PLANNER ] to plot custom waypoints.
-- Data is automatically uploaded to EDSM and Discord as you play.
-- The window position is saved automatically upon exit.
+2.  **Running the Application:**
+    *   Download the `VoidCompass.py` script.
+    *   Run the script from your terminal:
+        ```bash
+        python VoidCompass.py
+        ```
 
-Fly Safe, Commander! o7
+3.  **First-Time Configuration:**
+    *   On the first run, the application will create a `config.json` file in the same directory.
+    *   The application will open. Click the **[ CONFIGURATION ]** button in the top-right corner.
+    *   Fill in the required fields in the settings panel.
+
+---
+
+## Configuration
+
+The application can be configured via the in-app settings panel or by directly editing the `config.json` file.
+
+*   `journal_path`: The path to your Elite Dangerous journal files. The application attempts to find the default path, but you may need to adjust it.
+    *   *Default:* `C:\Users\[YourUser]\Saved Games\Frontier Developments\Elite Dangerous`
+
+*   `edsm_cmdr_name`: Your in-game commander name as registered on EDSM.
+
+*   `edsm_api_key`: Your personal API key from your EDSM profile settings.
+
+*   `discord_webhook`: The full URL for the Discord webhook you want the bot to post updates to.
+
+*   `overlay_enabled`: Set to `true` to show the tactical Navigation HUD overlay, or `false` to hide it.
+
+*   `cargo_overlay_enabled`: Set to `true` to show the cargo manifest overlay.
+
+*   `screenshots_enabled`: Set to `true` to enable the BMP to PNG converter.
+
+*   `screenshots_path`: The folder to watch for new screenshots.
+
+*   `hud_x` / `hud_y`: The screen coordinates for the HUD's position. This is set automatically when you move the HUD.
+
+*   `main_geometry` / `settings_geometry`: The size and position of the main dashboard and settings windows. These are saved automatically when you close the windows.
+
+**Note:** After saving changes in the configuration window, a restart of the application is recommended for all changes to take effect.
+
+---
+
+## Usage
+
+*   **Start the application before or during your game session.** It will automatically detect the latest journal file and start processing events.
+*   **The Dashboard** provides a comprehensive overview and a log of all activities.
+*   **The HUD** can be clicked and dragged to any position on your screen. Its position will be saved for the next session.
+*   **Discord messages** will be created/updated automatically in the channel associated with your webhook URL. A new message is created each time you jump to a new system.
+
+Happy exploring, Commander! o7

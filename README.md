@@ -19,7 +19,6 @@ A real-time exploration and navigation companion for Elite Dangerous. This tool 
     *   Navigation target and distance in light-years.
     *   A visual progress bar for system scans.
     *   Live system traffic data from EDSM (24h, weekly, total).
-    *   Organic (biology) scan count.
 
     ![Tactical HUD](https://raw.githubusercontent.com/insert3coins/VoidCompass-Release/main/NavHud.PNG "Tactical HUD")
 
